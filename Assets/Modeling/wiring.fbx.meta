@@ -1,26 +1,22 @@
 fileFormatVersion: 2
-guid: 08d619f81922b3f42b065509f12aac8b
+guid: c48c22d24344b3d41b4c74ae757b4dab
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Surface
-    100002: //RootNode
-    400000: Surface
-    400002: //RootNode
-    2300000: Surface
-    3300000: Surface
-    4300000: Surface
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SurfaceMat
-    second: {fileID: 2100000, guid: 6a9c2a927a918451e8260f594f394bac, type: 2}
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Wire_Red
+    2100002: Wire
+    2100004: Diffuse_Material
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: wiring
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -59,7 +55,7 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
