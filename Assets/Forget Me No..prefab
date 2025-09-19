@@ -1781,7 +1781,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ea7383a11cc28a24cbea15073b68bf56, type: 2}
+  - {fileID: 2100000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1815,7 +1815,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ea7383a11cc28a24cbea15073b68bf56, type: 2}
+  - {fileID: 2100000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1883,7 +1883,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ea7383a11cc28a24cbea15073b68bf56, type: 2}
+  - {fileID: 2100000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1917,7 +1917,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3697f49d7c2323b4d91c4165127e2355, type: 2}
+  - {fileID: 2100000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1985,7 +1985,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ea7383a11cc28a24cbea15073b68bf56, type: 2}
+  - {fileID: 2100000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2053,7 +2053,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3697f49d7c2323b4d91c4165127e2355, type: 2}
+  - {fileID: 2100000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2429,7 +2429,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ea7383a11cc28a24cbea15073b68bf56, type: 2}
+  - {fileID: 2100000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2497,7 +2497,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ea7383a11cc28a24cbea15073b68bf56, type: 2}
+  - {fileID: 2100000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2803,7 +2803,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ea7383a11cc28a24cbea15073b68bf56, type: 2}
+  - {fileID: 2100000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2939,7 +2939,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ea7383a11cc28a24cbea15073b68bf56, type: 2}
+  - {fileID: 2100000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3291,7 +3291,7 @@ TextMesh:
   m_FontSize: 140
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
+  m_Font: {fileID: 12800000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 3019898879
@@ -3312,7 +3312,7 @@ TextMesh:
   m_FontSize: 140
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
+  m_Font: {fileID: 12800000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 3019898879
@@ -3354,7 +3354,7 @@ TextMesh:
   m_FontSize: 140
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
+  m_Font: {fileID: 12800000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 3019898879
@@ -3375,7 +3375,7 @@ TextMesh:
   m_FontSize: 140
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
+  m_Font: {fileID: 12800000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 3019898879
@@ -3396,7 +3396,7 @@ TextMesh:
   m_FontSize: 140
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
+  m_Font: {fileID: 12800000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 3019898879
@@ -3417,7 +3417,7 @@ TextMesh:
   m_FontSize: 140
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
+  m_Font: {fileID: 12800000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 3019898879
@@ -3459,7 +3459,7 @@ TextMesh:
   m_FontSize: 140
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
+  m_Font: {fileID: 12800000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 3019898879
@@ -3480,7 +3480,7 @@ TextMesh:
   m_FontSize: 140
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
+  m_Font: {fileID: 12800000, guid: c203d8c5c517c8b4c8d37ff661454af3, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 3019898879
@@ -3683,7 +3683,28 @@ MonoBehaviour:
   Audio: {fileID: 114079231060724502}
   Module: {fileID: 114946486298962436}
   Boss: {fileID: 114809112645106528}
-  buttons: []
+  buttons:
+  - {fileID: 114364276691644032}
+  - {fileID: 114871699810506052}
+  - {fileID: 114191820716721508}
+  - {fileID: 114404438704428968}
+  - {fileID: 114653391634915450}
+  - {fileID: 114192567041231066}
+  - {fileID: 114142358747364006}
+  - {fileID: 114448999479745648}
+  - {fileID: 114910999384008548}
+  - {fileID: 114340231877470508}
+  buttonLeds:
+  - {fileID: 23872658930352568}
+  - {fileID: 23337719656951650}
+  - {fileID: 23943669189671138}
+  - {fileID: 23787645022947728}
+  - {fileID: 23641046607462650}
+  - {fileID: 23902514106571058}
+  - {fileID: 23189639181625542}
+  - {fileID: 23118728009953592}
+  - {fileID: 23238353852993374}
+  - {fileID: 23422879270092866}
   mainDisplay: {fileID: 102963474960317734}
   mainDisplayBig: {fileID: 102219358359815084}
   stageDisplay: {fileID: 102001854154981966}
@@ -4446,15 +4467,17 @@ MonoBehaviour:
   - {fileID: 114364276691644032}
   - {fileID: 114871699810506052}
   - {fileID: 114191820716721508}
+  - {fileID: 0}
   - {fileID: 114404438704428968}
   - {fileID: 114653391634915450}
   - {fileID: 114192567041231066}
+  - {fileID: 0}
   - {fileID: 114142358747364006}
   - {fileID: 114448999479745648}
   - {fileID: 114910999384008548}
   - {fileID: 114340231877470508}
   IsPassThrough: 0
-  ChildRowLength: 0
+  ChildRowLength: 4
   Highlight: {fileID: 114689397608535312}
   SelectableColliders: []
   DefaultSelectableIndex: 0

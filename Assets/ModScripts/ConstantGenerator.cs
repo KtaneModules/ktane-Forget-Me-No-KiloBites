@@ -87,8 +87,8 @@ public class ConstantGenerator
 
         var orderPriority = new[]
         {
-            Enumerable.Range(0, 4).ToArray(),
-            Enumerable.Range(0, 4).Reverse().ToArray(),
+            new[] { 0, 1, 2, 3 },
+            new[] { 3, 2, 1, 0 },
             new[] { 0, 3, 2, 1 },
             new[] { 1, 3, 2, 0 },
             new[] { 2, 1, 3, 0 },
@@ -103,9 +103,9 @@ public class ConstantGenerator
             new[] { 1, 0, 2, 3 }
         };
 
-        var snValues = bomb.GetSerialNumber().Select(x => char.IsLetter(x) ? "-ABCDEFGHIJKLMNOPQRSTUVWXYZ".IndexOf(x) : int.Parse(x.ToString())).ToArray();
+        var snValues = bomb.GetSerialNumber().Select(x => char.IsLetter(x) ? "-ABCDEFGHIJKLMNOPQRSTUVWXYZ".IndexOf(x) % 10 : int.Parse(x.ToString())).ToArray();
 
-        var invalidValues = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        var invalidValues = Enumerable.Range(0, 10).ToList();
 
         for (int i = 0; i < snValues.Length; i++)
         {

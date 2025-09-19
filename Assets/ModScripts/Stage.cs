@@ -7,6 +7,5 @@
     {
         SelectedConstant = selectedConstant;
         GeneratedValue = generatedValue;
-
     }
 }

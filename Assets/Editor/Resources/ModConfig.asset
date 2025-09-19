@@ -11,10 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: 
-  title: 
-  author: 
-  description: 
-  version: 
+  id: forgetMeNoReupload
+  title: Forget Me No. [REUPLOAD]
+  author: YourokahnTMF
+  description: "This one likes \u03C0, but not too much \u03C0. \n\nAdd digits from
+    various mathematical constants to displayed digits to get the answer to solve
+    the module.\n\nThis is a reupload of a module by the original author. Please unsubscribe/disable
+    the original module here: https://steamcommunity.com/sharedfiles/filedetails/?id=3435784155"
+  version: 1
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 5cc26dbf04f9fb24a89454c1b71e592b, type: 3}

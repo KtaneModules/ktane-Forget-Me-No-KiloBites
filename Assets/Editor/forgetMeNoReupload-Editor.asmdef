@@ -1,0 +1,10 @@
+{
+  "name": "forgetMeNoReupload-Editor",
+  "references": [
+    "forgetMeNoReupload"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": []
+}

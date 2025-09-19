@@ -6,7 +6,8 @@ using UnityEngine;
 using static UnityEngine.Random;
 using static UnityEngine.Debug;
 
-public class ForgetMeNoScript : MonoBehaviour {
+public class ForgetMeNoScript : MonoBehaviour 
+{
 
 	public KMBombInfo Bomb;
 	public KMAudio Audio;
@@ -31,7 +32,7 @@ public class ForgetMeNoScript : MonoBehaviour {
     private ConstantGenerator generator;
     private List<Constant> assignedConstants;
     private StageGenerator stageGenerator;
-
+    
     private List<int> answers;
 
     private Coroutine[] buttonAnims = new Coroutine[10];
@@ -69,6 +70,10 @@ public class ForgetMeNoScript : MonoBehaviour {
     void Activate()
     {
         isActivated = true;
+
+        if (stageCount == 0)
+            return;
+
         DisplayStage();
     }
 
@@ -167,12 +172,14 @@ public class ForgetMeNoScript : MonoBehaviour {
 
             if (enteredStages == stageCount)
             {
+                Log($"[Forget Me No. #{moduleId}] All digits have been entered correctly. Solved!");
                 moduleSolved = true;
                 Module.HandlePass();
             }
         }
         else
         {
+            Log($"[Forget Me No. #{moduleId}] The digit expected for stage {enteredStages + 1} is {answers[enteredStages]}, but inputted {number} instead. Strike!");
             Module.HandleStrike();
             mainDisplay.text = string.Empty;
             DisplayStage(enteredStages);
@@ -297,7 +304,7 @@ public class ForgetMeNoScript : MonoBehaviour {
 
 
 #pragma warning disable 414
-	private readonly string TwitchHelpMessage = @"!{0} something";
+	private readonly string TwitchHelpMessage = @"!{0} press/submit 1234 [to submit your sequence]. The sequence length depends on how many modules were on the bomb. You may use spaces in the digit sequence";
 #pragma warning restore 414
 
     private SolveType DetermineSolveType(int dlen, int slen)
@@ -317,7 +324,7 @@ public class ForgetMeNoScript : MonoBehaviour {
         return SolveType.Regular;
     }
 
-    private bool GetMusicToggle(SolveType type, int curPos, int dlen, int slen)
+    private bool GetMusicToggle(SolveType type, int curPos)
     {
         if (type == SolveType.SlowStart)
             return curPos == 1 || curPos == 12;
@@ -350,15 +357,127 @@ public class ForgetMeNoScript : MonoBehaviour {
         return 0.05f;
     }
 
+    private int GetDigit(char c) => "1234567890".IndexOf(c);
+
+    private static readonly string[] placeNames =
+    {
+        "reddit",
+        "discord",
+        "twitch chat",
+        "mom",
+        "dad"
+    };
+
+    private bool firstTry = true;
+
 	IEnumerator ProcessTwitchCommand(string command)
     {
 		string[] split = command.ToUpperInvariant().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
 		yield return null;
+
+        if (new[] { "PRESS", "SUBMIT" }.Any(x => x == split[0]))
+        {
+            if (split.Length == 1)
+            {
+                yield return "sendtochaterror Press specify what digits to press!";
+                yield break;
+            }
+
+            var digits = new List<int>();
+
+            foreach (var str in split.Skip(1).ToArray())
+            {
+                foreach (var c in str)
+                {
+                    if (!"0123456789 ".Contains(c))
+                    {
+                        yield return $"sendtochaterror Invalid character in sequence: '{c}'. Valid characters are 0-9, and space.";
+                        yield break;
+                    }
+
+                    var d = GetDigit(c);
+
+                    if (d != -1)
+                        digits.Add(d);
+                }
+            }
+
+            if (!readyToSubmit)
+            {
+                yield return "sendtochat DansGame A little early for that, don't you think?";
+                buttons.PickRandom().OnInteract();
+                yield return new WaitForSeconds(0.1f);
+                yield break;
+            }
+
+            if (digits.Count > (answers.Count - enteredStages))
+            {
+                yield return "sendtochaterror NotLikeThis Too many digits submitted!";
+                yield break;
+            }
+
+            yield return $"sendtochat {(firstTry ? "OhMyDog Here we go!" : "Maybe this time?")}";
+
+            firstTry = false;
+
+            yield return "multiple strikes";
+
+            var solve = DetermineSolveType(digits.Count, answers.Count - enteredStages);
+
+            if (Bomb.GetTime() / (answers.Count - enteredStages) < 0.1f)
+                solve = SolveType.Regular;
+
+            foreach (var digit in digits)
+            {
+                buttons[digit].OnInteract();
+
+                if (buttonLeds.Any(x => x.material.color == Color.green))
+                {
+                    if (solve == SolveType.Regular && Bomb.GetTime() >= 45 && value > 0.95)
+                    {
+                        yield return new WaitForSeconds(2);
+                        yield return $"sendtochat Kreygasm We did it {placeNames.PickRandom()}!";
+                        yield return new WaitForSeconds(1);
+                        yield return "sendtochat Kappa Nope, just kidding.";
+                    }
+                    else
+                        yield return "sendtochat DansGame This isn't correct...";
+
+                    yield return $"sendtochat Correct digits entered: {enteredStages}";
+
+                    break;
+                }
+
+                if (enteredStages == answers.Count)
+                {
+                    yield return $"sendtochat Kreygasm We did it {placeNames.PickRandom()}!";
+                    break;
+                }
+
+                if (GetMusicToggle(solve, enteredStages))
+                    yield return "toggle waiting music";
+
+                yield return new WaitForSeconds(GetDelay(solve, enteredStages, digits.Count, Bomb.GetTime()));
+            }
+            yield return "end multiple strikes";
+        }
     }
 
 	IEnumerator TwitchHandleForcedSolve()
     {
-		yield return null;
+		while (!isActivated || !readyToSubmit)
+        {
+            if (moduleSolved)
+                yield break;
+
+            yield return true;
+        }
+
+        for (int i = enteredStages; i < answers.Count; i++)
+        {
+            buttons[GetDigit((char)(answers[i] + '0'))].OnInteract();
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 
 

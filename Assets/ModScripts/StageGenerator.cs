@@ -9,7 +9,7 @@ public class StageGenerator
 
     public StageGenerator(List<Constant> assignedConstants, int stageCount)
     {
-        Stages = Enumerable.Range(0, stageCount).Select(_ => new Stage(assignedConstants.PickRandom(), Range(0, 10))).ToList();
+        Stages = Enumerable.Range(0, stageCount).Select(_ => new Stage(assignedConstants.PickRandom(), Range(0, 10))).ToList().Shuffle();
         CalculatedStages = CalculateStages(Stages);
     }
 
