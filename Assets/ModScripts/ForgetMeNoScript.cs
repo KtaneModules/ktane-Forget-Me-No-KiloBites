@@ -157,6 +157,7 @@ public class ForgetMeNoScript : MonoBehaviour
         {
             Log($"[Forget Me No. #{moduleId}] The module isn't ready to be submitted yet. Strike!");
             Module.HandleStrike();
+            return;
         }
 
         var number = int.Parse(button.GetComponentInChildren<TextMesh>().text);
